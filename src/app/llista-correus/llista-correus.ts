@@ -1,21 +1,22 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NgForOf} from '@angular/common';
 
 @Component({
   selector: 'app-llista-correus',
-  imports: [
-    NgForOf
-  ],
+  imports: [],
   templateUrl: './llista-correus.html',
   styleUrl: './llista-correus.css',
   standalone: true
 })
-export class LlistaCorreus {
-  // Correos de ejemplo
+export class LlistaCorreus implements OnInit {
 
-  correus: string[] = [
-    'correoejemplo1',
-    'correoejemplo2'
+  correus = [
+    {numero: "Correo 1",emissor: "alexis@gmail.com", texto:"Hola buenas le informo que te calles", leido: false,},
+    {numero: "Correo 2",emissor: "gorka@gmail.com", texto:"Se a caducao tu suscripcion paga perro", leido: true,}
   ];
+
+  ngOnInit(): void {
+
+  }
 
 }

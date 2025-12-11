@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-correu',
@@ -7,12 +7,24 @@ import { Component } from '@angular/core';
   styleUrl: './correu.css',
   standalone: true
 })
-export class Correu {
+export class Correu implements OnInit{
 
-  protected readonly contarLetras = contarLetras;
+  constructor() {
+
+  }
+
+  ngOnInit(): void {
+
+  }
+
+  contarLetras() {
+    let letrasTitulo = document.getElementById("titulo")!.innerHTML;
+    return letrasTitulo.length;
+  }
+
 }
 
-function contarLetras(texto: string): number {
-  return texto.length;
-}
+
+
+
 
