@@ -1,0 +1,17 @@
+.leido {
+  color: black;
+  background-color: transparent;
+  width: 18%;
+}
+
+.no-leido {
+  color: yellow;
+  background-color: black;
+  width: 18%;
+}
+
+p {
+  text-decoration: underline;
+  color: red;
+  font-weight: bold;
+}

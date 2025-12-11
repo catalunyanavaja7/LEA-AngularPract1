@@ -2,21 +2,56 @@
 <h3>Correos manualmente</h3>
 
 <ul>
-  <li>Correo 1 G2A KEY</li>
-  <li>Correo 2 Eneba KEY tambien no tengo ideas</li>
+  <h3 [ngClass]="correus[0].leido ? 'leido' : 'no-leido'">
+    {{correus[0].numero}}
+  </h3>
+  <li [ngClass]="correus[0].leido ? 'leido' : 'no-leido'">
+    {{correus[0].emissor}}
+  </li>
+  <li  [ngClass]="correus[0].leido ? 'leido' : 'no-leido'">
+    {{correus[0].texto}}
+  </li>
+
+  <h3  [ngClass]="correus[1].leido ? 'leido' : 'no-leido'">
+    {{correus[1].numero}}
+  </h3>
+  <li  [ngClass]="correus[1].leido ? 'leido' : 'no-leido'">
+    {{correus[1].emissor}}
+  </li>
+  <li  [ngClass]="correus[1].leido ? 'leido' : 'no-leido'">
+    {{correus[1].texto}}
+  </li>
 </ul>
+
+<hr>
 
 <h3>Correos con FOR</h3>
 
 <ul>
   @for (correo of correus; track correus) {
 
-    <h3>{{correo.numero}}</h3>
-    <li>{{correo.emissor}}</li>
-    <li>{{correo.texto}}</li>
-
-    @if ()
-
+    @if (correo.leido) {
+      <h3 [ngClass]="correo.leido ? 'leido' : 'no-leido'">
+        {{correo.numero}}
+      </h3>
+      <li [ngClass]="correo.leido ? 'leido' : 'no-leido'">
+        {{correo.emissor}}
+      </li>
+      <li [ngClass]="correo.leido ? 'leido' : 'no-leido'">
+        {{correo.texto}}
+      </li>
+    } @else {
+      <p>Aqui deberia haber algo pero ya lo has leido....</p>
+    }
   }
 </ul>
+
+@for (correo of correus; track correus) {
+  @if (correo.leido) {
+    {{++correo}}
+  }
+}
+
+<h3>correos leidos: {{correus[4].contador}}</h3>
+<h3>correos sin leer: {{correus[4].contador}}</h3>
 
