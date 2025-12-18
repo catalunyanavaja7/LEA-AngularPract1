@@ -12,14 +12,14 @@
     {{correus[0].texto}}
   </li>
 
-  <h3  [ngClass]="correus[1].leido ? 'leido' : 'no-leido'">
-    {{correus[1].numero}}
+  <h3  [ngClass]="correus[2].leido ? 'leido' : 'no-leido'">
+    {{correus[2].numero}}
   </h3>
-  <li  [ngClass]="correus[1].leido ? 'leido' : 'no-leido'">
-    {{correus[1].emissor}}
+  <li  [ngClass]="correus[2].leido ? 'leido' : 'no-leido'">
+    {{correus[2].emissor}}
   </li>
-  <li  [ngClass]="correus[1].leido ? 'leido' : 'no-leido'">
-    {{correus[1].texto}}
+  <li  [ngClass]="correus[2].leido ? 'leido' : 'no-leido'">
+    {{correus[2].texto}}
   </li>
 </ul>
 
@@ -48,7 +48,7 @@
 
 @for (correo of correus; track correus) {
   @if (correo.leido) {
-    {{++correo}}
+    {{++correo.contador}}
   }
 }
 
